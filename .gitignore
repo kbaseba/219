@@ -51,20 +51,8 @@ build/
 *.sqlite
 *.db
 
-# Ignore images or assets (optional, modify based on your needs)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.webp
-
 # Ignore compiled binaries
 bin/
 *.exe
 *.dll
 
-# Ignore documentation artifacts
-*.pdf
-*.docx
-*.pptx
