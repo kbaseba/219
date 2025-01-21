@@ -1,0 +1,70 @@
+# Ignore node_modules folder (for Node.js projects)
+node_modules/
+
+# Ignore Python cache files and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+env/
+*.env
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore compiled code and temporary files
+*.out
+*.o
+*.so
+*.swp
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore OS-specific files
+Thumbs.db
+desktop.ini
+
+# Ignore build and distribution files (for Python or other projects)
+dist/
+build/
+*.egg-info/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.bak
+
+# Ignore compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore database files
+*.sqlite
+*.db
+
+# Ignore images or assets (optional, modify based on your needs)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+
+# Ignore compiled binaries
+bin/
+*.exe
+*.dll
+
+# Ignore documentation artifacts
+*.pdf
+*.docx
+*.pptx
