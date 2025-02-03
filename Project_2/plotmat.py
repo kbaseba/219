@@ -2,6 +2,7 @@ import itertools
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
+
 def plot_mat(mat, xticklabels = None, yticklabels = None, pic_fname = None, size=(-1,-1), if_show_values = True,
              colorbar = True, grid = 'k', xlabel = None, ylabel = None, title = None, vmin=None, vmax=None):
     if size == (-1, -1):
@@ -53,15 +54,22 @@ def plot_mat(mat, xticklabels = None, yticklabels = None, pic_fname = None, size
 
     # thresh = mat.max() / 2
 
-    def show_values(pc, fmt="%.3f", **kw):
+    def show_values(pc, fmt="%d", **kw):
         pc.update_scalarmappable()
         ax = pc.axes
-        for p, color, value in itertools.zip_longest(pc.get_paths(), pc.get_facecolors(), pc.get_array()):
+        for p, color, value in itertools.zip_longest(pc.get_paths(), pc.get_facecolors(), pc.get_array().flatten()):
             x, y = p.vertices[:-2, :].mean(0)
             if np.all(color[:3] > 0.5):
                 color = (0.0, 0.0, 0.0)
             else:
                 color = (1.0, 1.0, 1.0)
+                
+            if isinstance(value, np.ndarray):
+                if value.size == 1:
+                    value = value.item()  # Convert single-element array to scalar
+                else:
+                    raise ValueError(f"Expected a single value, but got array: {value}")
+                
             ax.text(x, y, fmt % value, ha="center", va="center", color=color, **kw, fontsize=10)
 
     if if_show_values:
