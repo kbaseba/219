@@ -59,3 +59,4 @@ bin/
 *.exe
 *.dll
 
+/Project_3/MSLR-WEB10K/*
